@@ -120,7 +120,8 @@ def AdminActual(mystic):
                 )
 
                 if member.status != ChatMemberStatus.ADMINISTRATOR or (
-                    member.privileges is None or not member.privileges.can_manage_video_chats
+                    member.privileges is None
+                    or not member.privileges.can_manage_video_chats
                 ):
                     return await message.reply(_["general_5"])
 
